@@ -6,8 +6,17 @@
 import math
 
 
+
+class State:
+
+    def __init__ (self, name, factories, defense, resistance, rebellion):
+        self.name, self.factories, self.defense, self.resistance, self.rebellion = name, factories, defense, resistance, rebellion
+        
+
 # Variables
 working = True
+writeString = ""
+states = []
 
 
 # get Factories
@@ -43,25 +52,53 @@ while working:
     
     try:
         resistance = float(resistance)
+        baseResist = resistance
         working = False
     except:
         print ("Resistance percentage needs to be an int.")
 
 
 print ("Result:")
-print ("\tFactories: [", round(factories * resistance * 0.01), "/", round(factories), "]", sep = '')
-print ("\tDefense: [", round (defense * resistance * 0.01), "/", round(defense), "]", sep = '')
+for x in range (0, round (resistance / 5) + 1):
+    writeString += ("Name - Resistance at: " + str(resistance) + "\tFactories: [" + str(round(factories * resistance * 0.01)) + "/" + str(round(factories)) + "]\tDefense: [" + str(round (defense * resistance * 0.01)) + "/" + str(round(defense)) + "]\n")
+    print ("Name - Resistance at: ", resistance, "\tFactories: [", round(factories * resistance * 0.01), "/", round(factories), "]", "\tDefense: [", round (defense * resistance * 0.01), "/", round(defense), "]", sep = '')
+    resistance = resistance - 5
 
 
 # writing to file
-file = open("HoiTPG.txt", "w+")
-file.write("Hi!")
+fileReader = open("HoiTPG.txt", "r")
+# this is all the doc's lines printed
+line = fileReader.readline()
+print ("\n\nFILE: \n===================")
+while line:
+    print (line)
+    
+    if (line.find("-") < 0):
+        print ("Wrong format!")
+    else:
+        stateName = line[0:line.find("-")]
+        line = line[line.find("-") + 2:]
+        print ("mod", line)
+        
+    #if (
+    states.append(State(stateName, 10, 40, 50, 30))
+    line = fileReader.readline()
+print ("============\n", fileReader.readline())
+fileReader.close()
+
+
+fileWriter = open("HoiTPG.txt", "w")
+#thingy = "Resistance at: " + str(baseResist) + "\tFactories: [" + str(round(factories*baseResist*0.01)) + "/" + str(round(factories)) + "]" + "\tDefense: [" + str(round(defense*baseResist*0.01)) + "/" + str(round(defense)) + "]"
+#fileWriter.write(thingy)
+#fileWriter.write("\n")
+fileWriter.write(writeString)
+fileWriter.close()
+
+
+print ("name is", stateName)
+
 
 print ("Howdy!")
-
-
-
-
 
 
 

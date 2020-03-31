@@ -1,1 +1,11 @@
-Hi!
+Name - Resistance at: 50.0	Factories: [5/10]	Defense: [25/50]
+Name - Resistance at: 45.0	Factories: [4/10]	Defense: [22/50]
+Name - Resistance at: 40.0	Factories: [4/10]	Defense: [20/50]
+Name - Resistance at: 35.0	Factories: [4/10]	Defense: [18/50]
+Name - Resistance at: 30.0	Factories: [3/10]	Defense: [15/50]
+Name - Resistance at: 25.0	Factories: [2/10]	Defense: [12/50]
+Name - Resistance at: 20.0	Factories: [2/10]	Defense: [10/50]
+Name - Resistance at: 15.0	Factories: [2/10]	Defense: [8/50]
+Name - Resistance at: 10.0	Factories: [1/10]	Defense: [5/50]
+Name - Resistance at: 5.0	Factories: [0/10]	Defense: [2/50]
+Name - Resistance at: 0.0	Factories: [0/10]	Defense: [0/50]
